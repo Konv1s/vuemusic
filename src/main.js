@@ -6,8 +6,9 @@ import VeeValidatePlugin from './includes/validation';
 import './assets/tailwind.css';
 import './assets/main.css';
 
-createApp(App)
-  .use(store)
-  .use(router)
-  .use(VeeValidatePlugin)
-  .mount('#app');
+const app = createApp(App);
+
+app.use(store);
+app.use(router);
+app.use(VeeValidatePlugin);
+app.mount('#app');
