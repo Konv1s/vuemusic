@@ -24,15 +24,12 @@
 </template>
 
 <script>
-  import { mapMutations, mapActions } from 'vuex';
+  import { mapMutations } from 'vuex';
 
   export default {
     name: 'HeaderComponent',
     methods: {
       ...mapMutations(['toggleAuthModal']),
-      /*toggleAuthModal() {
-        this.$store.commit('toggleAuthModal');
-      }*/
     },
   };
 </script>
@@ -40,3 +37,7 @@
 <style scoped>
 
 </style>
+<!--
+/*toggleAuthModal() {
+this.$store.commit('toggleAuthModal');
+}*/-->
