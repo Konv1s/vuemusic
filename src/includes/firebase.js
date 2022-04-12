@@ -1,5 +1,7 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import 'firebase/compat/storage';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDbz8qgOHEKcbAQcG6N8jVDF1Iz_YBVsew',
@@ -11,4 +13,13 @@ const firebaseConfig = {
   measurementId: 'G-D0V402ERXG'
 };
 
-export default firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+const storage = firebase.storage();
+
+const usersCollection = db.collection('users');
+const songsCollection = db.collection('songs');
+
+export { auth, db, usersCollection, storage, songsCollection };
